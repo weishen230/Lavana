@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "598133203730",
+    "firebase_url": "https://lavanaentertainment.firebaseio.com",
+    "project_id": "lavanaentertainment",
+    "storage_bucket": "lavanaentertainment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598133203730:android:161f6f31760779443289cb",
+        "android_client_info": {
+          "package_name": "com.example.lavana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598133203730-1cqlebe9rg210trusdgl6tujsqvm047n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lavana",
+            "certificate_hash": "b73f3a7e5f6e43443e6c65f1d79c385c93f6c648"
+          }
+        },
+        {
+          "client_id": "598133203730-fumpe0eg0qs9mgjtqpfkoeg5daao4oj3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaknejE97VWnhwiWItn-lxhe6SJFJFh-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598133203730-fumpe0eg0qs9mgjtqpfkoeg5daao4oj3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

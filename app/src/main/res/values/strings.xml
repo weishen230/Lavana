@@ -1,0 +1,182 @@
+<resources>
+    <string name="app_name">Lavana Entertainment</string>
+    <string name="title_activity_drawer">drawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="account_settings">Account Settings</string>
+
+    <string name="admin_menu">My Class</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_coachMgmt">Coach Management</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_logout">Logout</string>
+
+    <!--Change Password page @string -->
+    <string name="changePass_currentPass">Current Password:</string>
+    <string name="changePass_newPass">New Password:</string>
+    <string name="changePass_newConPass">Confirm New Password:</string>
+    <string name="changePass_btnChange">Yes, Change</string>
+
+    <!--Change Password page @string -->
+    <string name="changeProfile_browseBtn">Browse</string>
+    <string name="changeProfile_uploadBtn">Upload</string>
+
+    <!--Forgot Password page @string -->
+    <string name="forgotPass_Email">Registered Account\'s Email</string>
+    <string name="forgotPass_btnSend">Send Code</string>
+    <string name="forgotPass_btnSubmit">Submit</string>
+    <string name="forgotPass_verCode">Vertification Code</string>
+
+    <!--Forgot Password page @string -->
+    <string name="resetPass_btnReset">Yes, Reset</string>
+    <string name="resetPass_btnCancel">Cancel</string>
+
+    <string name="pref_changePass">Change Password</string>
+    <string name="pref_changeProfilePic">Change Profile Picture</string>
+    <string name="sharedPreUsername">No name</string>
+    <string name="sharedPreEmail">No Email</string>
+
+    <string name="Penang_Marathon_Theme">Penang Marathon 2019</string>
+    <string name="KL_Run">KL Run 2019</string>
+    <string name="LoginTheme">Login</string>
+    <string name="RegisterTheme">Register</string>
+    <string name="EventTheme">Event</string>
+    <string name="detailTxt">Race Date: \nSunday, 24 December 2019 \n\nStart Time: \n6.00am
+                \n\nStart Location: \nQueensbay Mall Outdoor Carpark \n\nFor more info, do not hesitate to contact us via
+                penangRun@gmail.com or +60102322110. Thank you for your participation.
+    </string>
+    <string name="detailTxt1">Race Date: \nWednesday, 25 December 2019 \n\nStart Time: \n6.00am
+                \n\nStart Location: \nSetapak Central \n\nFor more info, do not hesitate to contact us via
+                christmasRun@gmail.com or +60102322110. Thank you for your participation.
+    </string>
+    <string name="detailTxt2">Race Date: \nWednesday, 20 January 2019 \n\nStart Time: \n6.00am
+                \n\nStart Location: \nKLCC \n\nFor more info, do not hesitate to contact us via
+                klRun@gmail.com or +60102322110. Thank you for your participation.
+    </string>
+
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="loginBtn">Login</string>
+    <string name="resetPass">Forgot password?</string>
+    <string name="stringAcc">Don\'t have Account? Create One</string>
+    <string name="userRegister">New Username:</string>
+    <string name="passwordRegister">New Password:</string>
+    <string name="passwordConRegister">Confirm Password:</string>
+    <string name="emailReg">Email:</string>
+    <string name="cancelBtn">Cancel</string>
+    <string name="registerBtn">Register</string>
+    <string name="haveAcc">Already have account? Login</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_admin_drawer">adminDrawerActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_send">Send</string>
+
+
+    <!-- Jun han -->
+    <string name="sports_type">Please Select the Type of SPORT Below: </string>
+
+    <string name="badminton_description">Badminton</string>
+    <string name="volleyball_description">Volleyball</string>
+    <string name="basketball_description">Basketball</string>
+    <string name="tableTennis_description">Table Tennis</string>
+    <string name="football_description">Football</string>
+    <string name="coach_ImageView">Coach</string>
+
+    <string name="badminton_Classes"><u>Badminton Class Time Table</u></string>
+    <string name="badminton_Class_Title"><u>Badminton Class</u></string>
+    <string name="coach_detail"><u>Coach Details</u></string>
+    <string name="memberDetail"><u>Member Details</u></string>
+
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+
+    <string name="morning">9AM - 11AM</string>
+    <string name="afternoon">2PM - 4PM</string>
+    <string name="night">8PM - 10PM</string>
+
+    <string name="Register">Register</string>
+    <string name="editTraningClass"><u>Edit Traning Class</u></string>
+    <string name="selectSportsType">Select Sports Type :</string>
+    <string name="selectTime">Select Time :</string>
+    <string name="registerTraningClass"><u>Register Training Class</u></string>
+
+    <string name="name">Name</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
+    <string name="phoneNo">Phone Number</string>
+    <string name="david">David Tan</string>
+    <string name="davidGender">Male</string>
+    <string name="davidAge">Female</string>
+    <string name="davidPhoneNo">0124557336</string>
+
+    <string name="pay">Pay</string>
+    <string name="cancel">Cancel</string>
+    <string name="changeCoach">Change Coach</string>
+    <string name="removeCoach">Remove Coach</string>
+    <string name="selectCoach"><u>Select Coach</u></string>
+    <string name="addCoach"><u>Add New Coach</u></string>
+    <string name="coachDescriptionBio">Description / Bio</string>
+    <string name="coachHintUsername">Username</string>
+    <string name="coachHintPassword">Password</string>
+    <string name="coachHintConfirmPass">Confirm Password</string>
+    <string name="coachHintEmail">Email</string>
+    <string name="chooseImage">Choose Image</string>
+    <string name="totalNumberOfStudent"><u>Total Number of Student</u></string>
+    <string name="numberofstudent">0</string>
+    <string name="total">Total :</string>
+
+    <string-array name="sports_groups">
+        <item>Badminton</item>
+        <item>Volleyball</item>
+        <item>Basketball</item>
+        <item>Table Tennis</item>
+    </string-array>
+
+    <string-array name="gender_groups">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    //coach detail
+    <string name="coach_name_title">Name : Alex Lee</string>
+    <string name="coach_gender_title">Gender : Male</string>
+    <string name="coach_phone_title">Phone No. : 0121234567</string>
+    <string name="feePerMonth">Fee Per Month (RM) : 80</string>
+    <string name="coach_description_title">Description : </string>
+    <string name="coach_description_bio">
+        Datuk Lee Chong Wei DB PJN AMN DCSM DSPN is a retired Malaysian badminton player.
+        As a singles player, Lee was ranked first worldwide for 349 weeks,
+        these including a 199-week streak from 21 August 2008 to 14 June 2012. </string>
+    <string name="back">Back</string>
+
+
+</resources>

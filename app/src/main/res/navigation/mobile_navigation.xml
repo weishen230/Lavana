@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_event">
+
+    <fragment
+        android:id="@+id/nav_event"
+        android:name="com.example.lavana.ui.event.eventFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_event" >
+        <action
+            android:id="@+id/action_eventFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_eventDetailSecFragment"
+            app:destination="@id/eventDetailSecFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_eventDetailThrFragment"
+            app:destination="@id/eventDetailThrFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_coachManagement"
+        android:name="com.example.lavana.ui.coachManagement.coachManagementFragment"
+        android:label="@string/menu_coachMgmt"
+        tools:layout="@layout/fragment_coach_management" />
+
+
+
+
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.lavana.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_tools"
+        android:name="com.example.lavana.ui.tools.ToolsFragment"
+        android:label="@string/menu_tools"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.lavana.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.example.lavana.ui.send.SendFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_send" />
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.example.lavana.ui.event.eventDetailFirstFragment"
+        android:label="fragment_event_detail"
+        tools:layout="@layout/fragment_event_detail" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventDetailSecFragment"
+        android:name="com.example.lavana.ui.event.eventDetailSecFragment"
+        android:label="fragment_event_detail_sec"
+        tools:layout="@layout/fragment_event_detail_sec" />
+    <fragment
+        android:id="@+id/eventDetailThrFragment"
+        android:name="com.example.lavana.ui.event.eventDetailThrFragment"
+        android:label="fragment_event_detail_thr"
+        tools:layout="@layout/fragment_event_detail_thr" />
+</navigation>
