@@ -16,7 +16,7 @@ class trainingClassCoachActivity : AppCompatActivity() {
         registerBtn = findViewById(R.id.registerButton)
 
         registerBtn.setOnClickListener{
-            val intent = Intent(this, trainingClassCoachActivity::class.java)
+            val intent = Intent(this, trainingClassRegisterActivity::class.java)
             startActivity(intent)
         }
 
