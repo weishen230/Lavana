@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".memberTrainingSelectTime">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="match_parent"
+                android:layout_height="162dp"
+                android:contentDescription="@string/badminton_description"
+                android:src="@drawable/badminton"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="@string/badminton_Classes"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/monday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/monday"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/mondayClass1_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/morning"
+                />
+
+            <Button
+                android:id="@+id/mondayClass2_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/afternoon"
+                />
+
+            <Button
+                android:id="@+id/mondayClass3_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/night"
+                />
+
+            <TextView
+                android:id="@+id/tuesday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="@string/tuesday"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/tuesdayClass1_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/morning"
+                />
+
+            <Button
+                android:id="@+id/tuesdayClass2_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/afternoon"
+                />
+
+            <Button
+                android:id="@+id/tuesdayClass3_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/night"
+                />
+
+            <TextView
+                android:id="@+id/wednesday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="@string/wednesday"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/wednesdayClass1_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/morning"
+                />
+
+            <Button
+                android:id="@+id/wednesdayClass2_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/afternoon"
+                />
+
+            <Button
+                android:id="@+id/wednesdayClass3_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/night"
+                />
+
+            <TextView
+                android:id="@+id/thursday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="@string/thursday"
+                android:textSize="25sp" />
+            <Button
+                android:id="@+id/thursdayClass1_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/morning"
+                />
+
+            <Button
+                android:id="@+id/thursdayClass2_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/afternoon"
+                />
+
+            <Button
+                android:id="@+id/thursdayClass3_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/night"
+                />
+            <TextView
+                android:id="@+id/friday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="@string/friday"
+                android:textSize="25sp" />
+            <Button
+                android:id="@+id/fridayClass1_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/morning"
+                />
+
+            <Button
+                android:id="@+id/fridayClass2_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/afternoon"
+                />
+
+            <Button
+                android:id="@+id/fridayClass3_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/night"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

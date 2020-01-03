@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserSelectCoach">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:contentDescription="@string/badminton_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/badminton" />
+
+            <TextView
+                android:id="@+id/registerTrainingClass_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="181dp"
+                android:fontFamily="@font/amaranth"
+                android:text="@string/badminton_Class_Title"
+                android:textSize="@dimen/title_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+            <TextView
+                android:id="@+id/register_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="250dp"
+                android:text="@string/coach_detail"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registerTrainingClass_textView" />
+
+            <ImageView
+                android:id="@+id/coach_imageview"
+                android:layout_width="145dp"
+                android:layout_height="220dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="250dp"
+                android:contentDescription="@string/coach_ImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_textView"
+                app:srcCompat="@drawable/menprofilepic" />
+
+            <TextView
+                android:id="@+id/registerUserName_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/coach_name_title"
+                android:textSize="@dimen/coach_title"
+                app:layout_constraintStart_toEndOf="@+id/coach_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/register_textView" />
+
+            <TextView
+                android:id="@+id/gender_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/coach_gender_title"
+                android:textSize="@dimen/coach_title"
+                app:layout_constraintStart_toEndOf="@+id/coach_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/registerUserName_textView" />
+
+            <TextView
+                android:id="@+id/coachPhoneNoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/coach_phone_title"
+                app:layout_constraintStart_toEndOf="@+id/coach_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/gender_textView" />
+
+            <TextView
+                android:id="@+id/coachDescriptionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/coach_description_title"
+                app:layout_constraintStart_toEndOf="@+id/coach_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/fee_textView" />
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@+id/coach_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/coachDescriptionTitle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/coach_description_bio"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/Register"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+            <TextView
+                android:id="@+id/fee_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/feePerMonth"
+                app:layout_constraintStart_toEndOf="@+id/coach_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/coachPhoneNoTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
