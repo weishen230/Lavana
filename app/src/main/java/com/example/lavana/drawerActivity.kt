@@ -23,6 +23,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.lavana.ui.coachManagement.coachManagementFragment
 import com.example.lavana.ui.event.eventFragment
+import com.example.lavana.ui.trainingClass.trainingClassFragment
 
 class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -107,7 +108,7 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             appBarConfiguration = AppBarConfiguration(
                 setOf(
                     R.id.nav_event, R.id.nav_coachManagement, R.id.nav_slideshow,
-                    R.id.nav_tools, R.id.nav_share, R.id.nav_send, R.id.nav_logout
+                    R.id.nav_tools, R.id.nav_share, R.id.nav_trainingClass, R.id.nav_logout
                 ), drawerLayout
             )
             setupActionBarWithNavController(navController, appBarConfiguration)
@@ -159,6 +160,18 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 val fragmentManager = supportFragmentManager
                 val fragmentTransaction = fragmentManager.beginTransaction()
                 val fragment = coachManagementFragment()
+                fragmentTransaction.remove(eventFragment())
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+                drawerLayout.closeDrawers()
+            }
+
+            R.id.nav_trainingClass ->
+            {
+                val fragmentManager = supportFragmentManager
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                val fragment = trainingClassFragment()
                 fragmentTransaction.remove(eventFragment())
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
                 fragmentTransaction.addToBackStack(null)

@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.lavana.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="hey"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
@@ -50,10 +50,10 @@
         tools:layout="@layout/fragment_share" />
 
     <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.lavana.ui.send.SendFragment"
+        android:id="@+id/nav_trainingClass"
+        android:name="com.example.lavana.ui.trainingClass.trainingClassFragment"
         android:label="@string/menu_logout"
-        tools:layout="@layout/fragment_send" />
+        tools:layout="@layout/fragment_training_class" />
     <fragment
         android:id="@+id/eventDetailFragment"
         android:name="com.example.lavana.ui.event.eventDetailFirstFragment"

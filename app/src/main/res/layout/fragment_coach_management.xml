@@ -26,7 +26,7 @@
 
 
             <TextView
-                android:id="@+id/admintextView"
+                android:id="@+id/adminTextView"
                 android:layout_width="400dp"
                 android:layout_height="33dp"
                 android:layout_marginTop="8dp"
@@ -62,7 +62,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/admintextView"
+                app:layout_constraintTop_toBottomOf="@+id/adminTextView"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView

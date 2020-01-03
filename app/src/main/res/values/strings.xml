@@ -12,7 +12,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_coachMgmt">Coach Management</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_trainingClass">Register Training Class</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_logout">Logout</string>
@@ -111,6 +111,11 @@
     <string name="coach_detail"><u>Coach Details</u></string>
     <string name="memberDetail"><u>Member Details</u></string>
 
+    <string name="class_Detail">Class Detail</string>
+    <string name="class_Sport">Sport: </string>
+    <string name="class_Day">Class Day: </string>
+    <string name="class_Time">Class Time: </string>
+
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
     <string name="wednesday">Wednesday</string>
@@ -179,7 +184,6 @@
         Datuk Lee Chong Wei DB PJN AMN DCSM DSPN is a retired Malaysian badminton player.
         As a singles player, Lee was ranked first worldwide for 349 weeks,
         these including a 199-week streak from 21 August 2008 to 14 June 2012. </string>
-
 
 
 </resources>

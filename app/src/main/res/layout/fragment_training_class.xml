@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:id="@+id/memberTextView"
+                    android:layout_width="400dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:text="@string/sports_type"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.022" />
+
+                <ImageButton
+                    android:id="@+id/memberBadminton_imageButton"
+                    style="@style/Widget.AppCompat.ImageButton"
+                    android:layout_width="400dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/badminton_description"
+                    android:src="@drawable/badminton"
+                    android:text="@string/badminton_description"
+                    android:textAlignment="center"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/memberVolleyball_imageButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/memberTextView"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/memberBadmintonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:text="@string/badminton_description"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textIsSelectable="true"
+                    android:textSize="50sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/memberBadminton_imageButton"
+                    app:layout_constraintEnd_toEndOf="@+id/memberBadminton_imageButton"
+                    app:layout_constraintHorizontal_bias="0.496"
+                    app:layout_constraintStart_toStartOf="@+id/memberBadminton_imageButton"
+                    app:layout_constraintTop_toTopOf="@+id/memberBadminton_imageButton"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageButton
+                    android:id="@+id/memberVolleyball_imageButton"
+                    style="@style/Widget.AppCompat.ImageButton"
+                    android:layout_width="400dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/volleyball_description"
+                    android:src="@drawable/volleyball_logo"
+                    android:textAlignment="center"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/memberBadminton_imageButton" />
+
+                <TextView
+                    android:id="@+id/memberVolleyball_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/volleyball_description"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textIsSelectable="true"
+                    android:textSize="50sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/memberVolleyball_imageButton"
+                    app:layout_constraintEnd_toEndOf="@+id/memberVolleyball_imageButton"
+                    app:layout_constraintStart_toStartOf="@+id/memberVolleyball_imageButton"
+                    app:layout_constraintTop_toTopOf="@+id/memberVolleyball_imageButton" />
+
+                <ImageButton
+                    android:id="@+id/memberBasketball_imageButton"
+                    style="@style/Widget.AppCompat.ImageButton"
+                    android:layout_width="400dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/basketball_description"
+                    android:src="@drawable/basketball"
+                    android:textAlignment="center"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/memberVolleyball_imageButton" />
+
+                <TextView
+                    android:id="@+id/memberBasketball_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/basketball_description"
+                    android:textColor="@android:color/white"
+                    android:textSize="50sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/memberBasketball_imageButton"
+                    app:layout_constraintEnd_toEndOf="@+id/memberBasketball_imageButton"
+                    app:layout_constraintStart_toStartOf="@+id/memberBasketball_imageButton"
+                    app:layout_constraintTop_toTopOf="@+id/memberBasketball_imageButton" />
+
+                <ImageButton
+                    android:id="@+id/memberFootball_imageButton"
+                    style="@style/Widget.AppCompat.ImageButton"
+                    android:layout_width="400dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/football_description"
+                    android:src="@drawable/football"
+                    android:textAlignment="center"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/memberBasketball_imageButton" />
+
+                <TextView
+                    android:id="@+id/memberFootball_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/football_description"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="50sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/memberFootball_imageButton"
+                    app:layout_constraintEnd_toEndOf="@+id/memberFootball_imageButton"
+                    app:layout_constraintStart_toStartOf="@+id/memberFootball_imageButton"
+                    app:layout_constraintTop_toTopOf="@+id/memberFootball_imageButton"
+                    app:layout_constraintVertical_bias="0.49" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
