@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
+import org.w3c.dom.Text
 
 class adminSelectTimeActivity : AppCompatActivity() {
 
@@ -25,6 +27,7 @@ class adminSelectTimeActivity : AppCompatActivity() {
     lateinit var fridayClass1Btn : Button
     lateinit var fridayClass2Btn : Button
     lateinit var fridayClass3Btn : Button
+    lateinit var textheader : TextView
 
 
 
@@ -59,6 +62,9 @@ class adminSelectTimeActivity : AppCompatActivity() {
         fridayClass1Btn = findViewById(R.id.adminfridayClass1_button)
         fridayClass2Btn = findViewById(R.id.adminfridayClass2_button)
         fridayClass3Btn = findViewById(R.id.adminfridayClass3_button)
+
+        textheader = findViewById(R.id.admintextView6)
+        textheader.setText(saveSports + " Class Time Table")
 
         var saveTimeSelected = sharedPreferences.getString("SELECTED_TIME", "No Time")?:return
         var saveDaySelected = sharedPreferences.getString("SELECTED_DAY", "No Day")?:return
