@@ -38,10 +38,10 @@
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.lavana.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_myTrainingClass"
+        android:name="com.example.lavana.ui.myTrainingClass.myTrainingClassFragment"
+        android:label="@string/menu_myTrainingClass"
+        tools:layout="@layout/fragment_my_training_class" />
 
     <fragment
         android:id="@+id/nav_share"

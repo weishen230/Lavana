@@ -18,11 +18,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.ui.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.lavana.ui.coachManagement.coachManagementFragment
 import com.example.lavana.ui.event.eventFragment
+import com.example.lavana.ui.myTrainingClass.myTrainingClassFragment
 import com.example.lavana.ui.trainingClass.trainingClassFragment
 
 class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -108,7 +110,7 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             appBarConfiguration = AppBarConfiguration(
                 setOf(
                     R.id.nav_event, R.id.nav_coachManagement, R.id.nav_slideshow,
-                    R.id.nav_tools, R.id.nav_share, R.id.nav_trainingClass, R.id.nav_logout
+                    R.id.nav_myTrainingClass, R.id.nav_share, R.id.nav_trainingClass, R.id.nav_logout
                 ), drawerLayout
             )
             setupActionBarWithNavController(navController, appBarConfiguration)
@@ -154,6 +156,21 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
         when(p0.itemId)
         {
+            R.id.nav_myTrainingClass ->
+            {
+                val fragmentManager = supportFragmentManager
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                val fragment = myTrainingClassFragment()
+                fragmentTransaction.remove(eventFragment())
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+
+                Toast.makeText(this, "asdsad", Toast.LENGTH_SHORT).show()
+
+                drawerLayout.closeDrawers()
+            }
+
 
             R.id.nav_coachManagement ->
             {

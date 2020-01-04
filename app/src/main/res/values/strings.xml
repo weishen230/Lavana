@@ -13,7 +13,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_coachMgmt">Coach Management</string>
     <string name="menu_trainingClass">Register Training Class</string>
-    <string name="menu_tools">Tools</string>
+    <string name="menu_myTrainingClass">My Training Class</string>
     <string name="menu_share">Share</string>
     <string name="menu_logout">Logout</string>
 
