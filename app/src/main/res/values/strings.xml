@@ -160,6 +160,9 @@
     <string name="numberofstudent">0</string>
     <string name="total">Total :</string>
 
+    //Payment
+    <string name="submit">Submit</string>
+
     <string-array name="sports_groups">
         <item>Badminton</item>
         <item>Volleyball</item>
@@ -186,5 +189,48 @@
         As a singles player, Lee was ranked first worldwide for 349 weeks,
         these including a 199-week streak from 21 August 2008 to 14 June 2012. </string>
 
+
+
+    //sinpei
+    <string name="nameoncard">Name On Card</string>
+    <string name="cardnum">Card Number</string>
+    <string name="address">Billing Address</string>
+    <string name="emailAddress">Email Address</string>
+    <string name="cvv">CVV</string>
+    <string name="submitBtn">Submit</string>
+    <string name="erroremail">Wrong format</string>
+    <string name="nullemail">Cannot be null</string>
+    <string name="errorname">Wrong format</string>
+    <string name="numname">Cannot be numberic</string>
+    <string name="nullname">Cannot be null</string>
+    <string name="phonenumber">Phonenumber</string>
+
+    <string-array name="month">
+        <item></item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="year">
+        <item></item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+
+    </string-array>
+    <string name="title_activity_pac_number">PacNumber</string>
 
 </resources>

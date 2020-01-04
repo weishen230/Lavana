@@ -1,9 +1,12 @@
 package com.example.lavana
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_training_class_register.*
 import org.w3c.dom.Text
 
 class trainingClassRegisterActivity : AppCompatActivity() {
@@ -21,9 +24,13 @@ class trainingClassRegisterActivity : AppCompatActivity() {
 
     private lateinit var totalPrice : TextView
 
+    private lateinit var payBtn : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_training_class_register)
+
+        setTitle("Training Class Registration")
 
         coachNameTxt = findViewById(R.id.coachDetailName_textView)
         coachGenderTxt = findViewById(R.id.gender_textView)
@@ -35,6 +42,8 @@ class trainingClassRegisterActivity : AppCompatActivity() {
         classTime = findViewById(R.id.classDetailTime_textView)
 
         totalPrice = findViewById(R.id.totalPriceaa)
+
+        payBtn = findViewById(R.id.pay_button)
 
         //Coach Details
         var sharedPreferences = getSharedPreferences("com.example.lavana", Context.MODE_PRIVATE)
@@ -49,6 +58,12 @@ class trainingClassRegisterActivity : AppCompatActivity() {
         var saveSports = sharedPreferences.getString("SELECTED_SPORT", "No Sport")
 
 
+        //to save member registration details
+        var saveMemberName = sharedPreferences.getString("MEMREG_NAME", "No Name")?:return
+        var saveMemberGender = sharedPreferences.getString("MEMREG_GENDER", "No Gender")?:return
+        var saveMemberAge = sharedPreferences.getString("MEMREG_AGE", "No Age")?:return
+        var saveMemberPhone = sharedPreferences.getString("MEMREG_PHONE", "No Phone")?:return
+
         coachNameTxt.setText("Name: " + saveName)
         coachGenderTxt.setText("Gender: " + saveGender)
         coachPhoneTxt.setText("Phone No: " + savePhone)
@@ -60,7 +75,24 @@ class trainingClassRegisterActivity : AppCompatActivity() {
 
         totalPrice.setText("Total (RM): " + saveFee)
 
-        setTitle("Training Class Registration")
+
+        payBtn.setOnClickListener{
+
+            with(sharedPreferences.edit())
+            {
+                putString("MEMREG_NAME", nameEditText.text.toString())
+                putString("MEMREG_GENDER", spinnerGender.selectedItem.toString())
+                putString("MEMREG_AGE", ageEditText.text.toString())
+                putString("MEMREG_PHONE", phoneNoEditText.text.toString())
+                apply()
+            }
+
+            val intent = Intent(this, paymentActivity::class.java)
+            startActivity(intent)
+
+
+        }
+
 
     }
 }

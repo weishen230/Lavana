@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/phonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:visibility="invisible"
+        android:textSize="30dp"
+        android:ems="10"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+
+
+    <TextView
+        android:id="@+id/enternumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kindly check your email for PAC Code"
+        android:textSize="30dp"
+        android:ems="10"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <EditText
+        android:id="@+id/pacnumberEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="PAC Number"
+        android:textSize="30dp"
+        android:ems="10"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+
+            android:id="@+id/pacNumberResendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:background="#0066ff"
+            android:paddingLeft="30dp"
+            android:paddingTop="20dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="20dp"
+            android:text="Re-send"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+
+
+        <Button
+            android:id="@+id/paymentProceedBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="2"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="30dp"
+            android:paddingTop="20dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="20dp"
+            android:text="Proceed"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
