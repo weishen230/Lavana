@@ -110,6 +110,21 @@ class trainingClassCoachActivity : AppCompatActivity() {
                             feeTxt.setText("Fee Per Month(RM): " + (u.fee).toString())
                             descTxt.setText((u.bio).toString())
 
+                            var sharedPreferences = getSharedPreferences("com.example.lavana", Context.MODE_PRIVATE)
+                            var saveName = sharedPreferences.getString("UNDERCOACH_NAME", "No Name")?:return
+                            var saveGender = sharedPreferences.getString("UNDERCOACH_GENDER", "No Gender")?:return
+                            var savePhone = sharedPreferences.getString("UNDERCOACH_PHONE", "No Phone")?:return
+                            var saveFee = sharedPreferences.getString("UNDERCOACH_FEE", "No Fee")?:return
+
+                            with(sharedPreferences.edit())
+                            {
+                                putString("UNDERCOACH_NAME", u.name)
+                                putString("UNDERCOACH_GENDER", u.gender)
+                                putString("UNDERCOACH_PHONE", u.phone)
+                                putString("UNDERCOACH_FEE", u.fee)
+                                apply()
+                            }
+
                             if(!((u.profilePic).equals("No Pic") || (u.profilePic).equals("")))
                             {
                                 Glide

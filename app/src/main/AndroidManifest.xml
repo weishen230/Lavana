@@ -11,8 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".trainingClassRegisterActivity"></activity>
-        <activity android:name=".trainingClassCoachActivity" />
+        <activity android:name=".paymentSuccessful"></activity>
+        <activity
+            android:name=".trainingClassRegisterActivity"
+            android:parentActivityName=".trainingClassCoachActivity" />
+        <activity
+            android:name=".trainingClassCoachActivity"
+            android:parentActivityName=".memberTrainingSelectTime" />
         <activity android:name=".memberTrainingSelectTime" />
         <activity android:name=".adminConCoachSelectedActivity" />
         <activity

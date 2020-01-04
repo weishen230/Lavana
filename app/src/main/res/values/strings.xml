@@ -111,10 +111,11 @@
     <string name="coach_detail"><u>Coach Details</u></string>
     <string name="memberDetail"><u>Member Details</u></string>
 
-    <string name="class_Detail">Class Detail</string>
+    <string name="class_Detail"><u>Class Details</u></string>
     <string name="class_Sport">Sport: </string>
     <string name="class_Day">Class Day: </string>
     <string name="class_Time">Class Time: </string>
+    <string name="totalPrice">Total (RM): </string>
 
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
