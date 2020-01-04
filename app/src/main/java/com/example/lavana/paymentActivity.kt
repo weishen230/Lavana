@@ -27,6 +27,8 @@ class paymentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
 
+        appExecutors = AppExecutors()
+
         var sharedPreferences = getSharedPreferences("com.example.lavana", Context.MODE_PRIVATE)
         sessionEmail  = (sharedPreferences.getString("SESSION_EMAIL", getString(R.string.sharedPreEmail))).toString()
 
@@ -189,7 +191,7 @@ class paymentActivity : AppCompatActivity() {
             try {
                 //Creating MimeMessage object
                 val mm = MimeMessage(session)
-                val emailId = forgotPassEmailEdit.text.toString()
+                val emailId = sessionEmail
                 //Setting sender address
                 mm.setFrom(InternetAddress(email))
                 //Adding receiver

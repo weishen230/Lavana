@@ -1,8 +1,10 @@
 package com.example.lavana
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.widget.Button
 import android.widget.Toast
 import com.android.example.github.AppExecutors
@@ -19,6 +21,7 @@ class pacNumberActivity : AppCompatActivity() {
 
     private lateinit var proceedBtn : Button
     private lateinit var resendBtn : Button
+    private lateinit var saveEmail: String
     lateinit var appExecutors: AppExecutors
     var randomInt : String = ""
 
@@ -33,6 +36,8 @@ class pacNumberActivity : AppCompatActivity() {
         resendBtn = findViewById(R.id.pacNumberResendBtn)
 
         var sharedPreferences = getSharedPreferences("com.example.lavana", Context.MODE_PRIVATE)
+        saveEmail = (sharedPreferences.getString("SESSION_EMAIL", getString(R.string.sharedPreEmail))).toString()
+
 
 
         resendBtn.setOnClickListener{
@@ -53,8 +58,21 @@ class pacNumberActivity : AppCompatActivity() {
                 var saveTimeSelected = sharedPreferences.getString("SELECTED_TIME", "No Time")
                 var saveDaySelected = sharedPreferences.getString("SELECTED_DAY", "No Day")
                 var saveSports = sharedPreferences.getString("SELECTED_SPORT", "No Sport")
+                var saveCoachName = sharedPreferences.getString("UNDERCOACH_NAME", "No Name")
+                var saveUsername = sharedPreferences.getString("SESSION_ID", getString(R.string.sharedPreUsername))
 
                 val firebase = FirebaseDatabase.getInstance().getReference("Training Class")
+                val classKey = firebase.push().key.toString()
+
+                val newTrainingClass = MyClass(saveUsername!!, saveSports!!, saveDaySelected!!, saveTimeSelected!!, saveSports!!, saveDaySelected!! + " " + saveTimeSelected!! + " " + saveSports!!)
+
+                firebase.child(classKey).setValue(newTrainingClass).addOnCompleteListener{
+
+                    val intent = Intent(this, paymentSuccessful::class.java)
+                    startActivity(intent)
+
+                }
+
             }
             else
             {
@@ -70,6 +88,7 @@ class pacNumberActivity : AppCompatActivity() {
 
 
     private fun sendEmail(){
+
 
         val email : String = "tarucpg@gmail.com"
         val password : String = "tarc1234"
@@ -97,7 +116,7 @@ class pacNumberActivity : AppCompatActivity() {
             try {
                 //Creating MimeMessage object
                 val mm = MimeMessage(session)
-                val emailId = forgotPassEmailEdit.text.toString()
+                val emailId = saveEmail
                 //Setting sender address
                 mm.setFrom(InternetAddress(email))
                 //Adding receiver
