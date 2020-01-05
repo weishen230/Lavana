@@ -15,6 +15,7 @@ import android.os.Bundle
 import android.util.Log
 import android.webkit.MimeTypeMap
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -33,12 +34,30 @@ class adminAddCoachActivity : AppCompatActivity() {
     private lateinit var addNewCoachBtn : Button
     private lateinit var progressDialog: ProgressDialog
 
+    private lateinit var newCoachNameTxt : TextView
+    private lateinit var newcoachPhoneTxt : TextView
+    private lateinit var newcoachFeeTxt : TextView
+    private lateinit var newcoachBioTxt : TextView
+    private lateinit var newcoachUsernameTxt : TextView
+    private lateinit var newcoachPasswordTxt : TextView
+    private lateinit var newcoachConPassTxt : TextView
+    private lateinit var newcoachEmailTxt : TextView
+
   //  private lateinit var browseBtn : Button
    // var url : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_add_coach)
+
+        newCoachNameTxt = findViewById(R.id.newCoachName)
+        newcoachPhoneTxt = findViewById(R.id.adminPhoneNoEditText)
+        newcoachFeeTxt = findViewById(R.id.adminFeePerMonth)
+        newcoachBioTxt = findViewById(R.id.editTextBio)
+        newcoachUsernameTxt = findViewById(R.id.editTextUsername)
+        newcoachPasswordTxt = findViewById(R.id.editTextPassword)
+        newcoachConPassTxt = findViewById(R.id.editTextConPass)
+        newcoachEmailTxt = findViewById(R.id.editTextEmail)
 
 
 
@@ -94,68 +113,80 @@ class adminAddCoachActivity : AppCompatActivity() {
             );
 
 
-
-            if(anyMatch())
+            if(newCoachNameTxt.text.toString().equals("") || newcoachPhoneTxt.text.toString().equals("") || newcoachFeeTxt.text.toString().equals("") || newcoachBioTxt.text.toString().equals("") ||
+                    newcoachUsernameTxt.text.toString().equals("") || newcoachPasswordTxt.text.toString().equals("") || newcoachConPassTxt.text.toString().equals("") || newcoachEmailTxt.text.toString().equals(""))
             {
-                if(passMatch())
+                Toast.makeText(this, "Please fill all the blank", Toast.LENGTH_SHORT).show()
+                progressDialog.dismiss()
+            }
+            else
+            {
+                if(anyMatch())
                 {
-                    //uploadFile()
+                    if(passMatch())
+                    {
+                        //uploadFile()
 
-                    val coachName = newCoachName.text.toString()
-                    val coachGender = adminSpinnerGender.selectedItem.toString()
-                    val coachPhone = adminPhoneNoEditText.text.toString()
-                    val coachFee = adminFeePerMonth.text.toString()
-                    val coachBio = editTextBio.text.toString()
-                    val coachSport = saveSports.toString()
-                    val coachTeachDay = saveDaySelected.toString()
-                    val coachTeachTime = saveTimeSelected.toString()
-                    val coachUsername = editTextUsername.text.toString()
-                    val coachPassword = editTextPassword.text.toString()
-                    val coachEmail = editTextEmail.text.toString()
-                    val accType = "coach"
-                    val coachProPic = ""
+                        val coachName = newCoachName.text.toString()
+                        val coachGender = adminSpinnerGender.selectedItem.toString()
+                        val coachPhone = adminPhoneNoEditText.text.toString()
+                        val coachFee = adminFeePerMonth.text.toString()
+                        val coachBio = editTextBio.text.toString()
+                        val coachSport = saveSports.toString()
+                        val coachTeachDay = saveDaySelected.toString()
+                        val coachTeachTime = saveTimeSelected.toString()
+                        val coachUsername = editTextUsername.text.toString()
+                        val coachPassword = editTextPassword.text.toString()
+                        val coachEmail = editTextEmail.text.toString()
+                        val accType = "coach"
+                        val coachProPic = ""
 
 
 
 
-                    val firebase = FirebaseDatabase.getInstance().getReference("users")
-                    val firebase1 = FirebaseDatabase.getInstance().getReference("coachDayTime")
+                        val firebase = FirebaseDatabase.getInstance().getReference("users")
+                        val firebase1 = FirebaseDatabase.getInstance().getReference("coachDayTime")
 
-                    //assign unique key for each registered member in firebase
-                    val userKey = firebase.push().key.toString()
+                        //assign unique key for each registered member in firebase
+                        val userKey = firebase.push().key.toString()
 
-                    val newCoach = User(userKey, coachUsername, coachPassword, coachEmail, accType, coachProPic,
-                                    coachName, coachGender, coachPhone, coachFee, coachBio, coachSport, coachTeachDay, coachTeachTime)
+                        val newCoach = User(userKey, coachUsername, coachPassword, coachEmail, accType, coachProPic,
+                            coachName, coachGender, coachPhone, coachFee, coachBio, coachSport, coachTeachDay, coachTeachTime)
 
-                    val coachClassKey = (coachTeachDay + " " + coachTeachTime + " " + coachSport).toString()
+                        val coachClassKey = (coachTeachDay + " " + coachTeachTime + " " + coachSport).toString()
 
-                    val coachDaytime = CoachDayTime(coachClassKey, coachTeachDay, coachTeachTime, coachUsername, coachName)
+                        val coachDaytime = CoachDayTime(coachClassKey, coachTeachDay, coachTeachTime, coachUsername, coachName)
 
-                    firebase.child(userKey).setValue(newCoach).addOnCompleteListener{
+                        firebase.child(userKey).setValue(newCoach).addOnCompleteListener{
 
-                        firebase1.child(coachClassKey).setValue(coachDaytime).addOnCompleteListener{
+                            firebase1.child(coachClassKey).setValue(coachDaytime).addOnCompleteListener{
 
+                            }
+
+                            Toast.makeText(this, "Add New Coach Succesfully", Toast.LENGTH_LONG).show()
+                            progressDialog.dismiss()
+
+                            newCoachName.setText("")
+                            adminPhoneNoEditText.setText("")
+                            adminFeePerMonth.setText("")
+                            editTextBio.setText("")
+                            editTextUsername.setText("")
+                            editTextPassword.setText("")
+                            editTextConPass.setText("")
+                            editTextEmail.setText("")
+
+                            /*val intent = Intent(this, adminSelectCoachActivity::class.java)
+                            startActivity(intent)
+                            finish()*/
                         }
 
-                        Toast.makeText(this, "Add New Coach Succesfully", Toast.LENGTH_LONG).show()
-                        progressDialog.dismiss()
-
-                        newCoachName.setText("")
-                        adminPhoneNoEditText.setText("")
-                        adminFeePerMonth.setText("")
-                        editTextBio.setText("")
-                        editTextUsername.setText("")
-                        editTextPassword.setText("")
-                        editTextConPass.setText("")
-                        editTextEmail.setText("")
-
-                        /*val intent = Intent(this, adminSelectCoachActivity::class.java)
-                        startActivity(intent)
-                        finish()*/
                     }
-
                 }
             }
+
+
+
+
 
         }
 

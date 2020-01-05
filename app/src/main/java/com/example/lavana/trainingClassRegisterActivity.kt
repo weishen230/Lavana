@@ -6,10 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_training_class_register.*
 import org.w3c.dom.Text
 
 class trainingClassRegisterActivity : AppCompatActivity() {
+
+    //register detail
+    private lateinit var regName : TextView
+    private lateinit var regAge : TextView
+    private lateinit var regPhone : TextView
 
     //Coach Details
     private lateinit var coachNameTxt : TextView
@@ -31,6 +37,10 @@ class trainingClassRegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_training_class_register)
 
         setTitle("Training Class Registration")
+
+        regName = findViewById(R.id.nameEditText)
+        regAge = findViewById(R.id.ageEditText)
+        regPhone = findViewById(R.id.phoneNoEditText)
 
         coachNameTxt = findViewById(R.id.coachDetailName_textView)
         coachGenderTxt = findViewById(R.id.gender_textView)
@@ -78,17 +88,37 @@ class trainingClassRegisterActivity : AppCompatActivity() {
 
         payBtn.setOnClickListener{
 
-            with(sharedPreferences.edit())
+            if(regName.text.toString().equals(""))
             {
-                putString("MEMREG_NAME", nameEditText.text.toString())
-                putString("MEMREG_GENDER", spinnerGender.selectedItem.toString())
-                putString("MEMREG_AGE", ageEditText.text.toString())
-                putString("MEMREG_PHONE", phoneNoEditText.text.toString())
-                apply()
+                Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show()
+                regName.requestFocus()
+            }
+            else if(regAge.text.toString().equals(""))
+            {
+                Toast.makeText(this, "Please enter your age", Toast.LENGTH_SHORT).show()
+                regAge.requestFocus()
+            }
+            else if(regPhone.text.toString().equals(""))
+            {
+                Toast.makeText(this, "Please enter your phone number", Toast.LENGTH_SHORT).show()
+                regPhone.requestFocus()
+            }
+            else
+            {
+                with(sharedPreferences.edit())
+                {
+                    putString("MEMREG_NAME", nameEditText.text.toString())
+                    putString("MEMREG_GENDER", spinnerGender.selectedItem.toString())
+                    putString("MEMREG_AGE", ageEditText.text.toString())
+                    putString("MEMREG_PHONE", phoneNoEditText.text.toString())
+                    apply()
+                }
+
+                val intent = Intent(this, paymentActivity::class.java)
+                startActivity(intent)
             }
 
-            val intent = Intent(this, paymentActivity::class.java)
-            startActivity(intent)
+
 
 
         }
