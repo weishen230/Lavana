@@ -64,7 +64,7 @@ class pacNumberActivity : AppCompatActivity() {
                 val firebase = FirebaseDatabase.getInstance().getReference("Training Class")
                 val classKey = firebase.push().key.toString()
 
-                val newTrainingClass = MyClass(saveUsername!!, saveSports!!, saveDaySelected!!, saveTimeSelected!!, saveSports!!, saveDaySelected!! + " " + saveTimeSelected!! + " " + saveSports!!)
+                val newTrainingClass = MyClass(saveUsername!!, saveSports!!, saveDaySelected!!, saveTimeSelected!!, saveCoachName!!, saveDaySelected!! + " " + saveTimeSelected!! + " " + saveSports!!)
 
                 firebase.child(classKey).setValue(newTrainingClass).addOnCompleteListener{
 

@@ -166,7 +166,7 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
 
-                Toast.makeText(this, "asdsad", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "asdsad", Toast.LENGTH_SHORT).show()
 
                 drawerLayout.closeDrawers()
             }
