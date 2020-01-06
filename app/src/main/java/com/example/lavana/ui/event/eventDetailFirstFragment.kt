@@ -22,6 +22,8 @@ class eventDetailFirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        container?.removeAllViews();
+
 
 
         (activity as AppCompatActivity).supportActionBar?.title = "KL Run"

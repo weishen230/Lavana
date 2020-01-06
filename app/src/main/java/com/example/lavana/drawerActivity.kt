@@ -18,14 +18,19 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.ui.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.lavana.ui.coachManagement.coachManagementFragment
+import com.example.lavana.ui.courtBooking.courtBookingFragment
 import com.example.lavana.ui.event.eventFragment
 import com.example.lavana.ui.myTrainingClass.myTrainingClassFragment
 import com.example.lavana.ui.trainingClass.trainingClassFragment
+
+import android.view.ViewGroup
+import com.example.lavana.ui.myBooking.myBookingFragment
+
 
 class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -109,8 +114,8 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             // menu should be considered as top level destinations.
             appBarConfiguration = AppBarConfiguration(
                 setOf(
-                    R.id.nav_event, R.id.nav_coachManagement, R.id.nav_slideshow,
-                    R.id.nav_myTrainingClass, R.id.nav_share, R.id.nav_trainingClass, R.id.nav_logout
+                    R.id.nav_event, R.id.nav_coachManagement, R.id.nav_courtBooking,
+                    R.id.nav_myTrainingClass, R.id.nav_myBooking , R.id.nav_share, R.id.nav_trainingClass, R.id.nav_logout
                 ), drawerLayout
             )
             setupActionBarWithNavController(navController, appBarConfiguration)
@@ -154,16 +159,38 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     //navigation drawer menu item selected
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
 
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+
+
         when(p0.itemId)
         {
-            R.id.nav_myTrainingClass ->
+            R.id.nav_myBooking ->
             {
-                val fragmentManager = supportFragmentManager
-                val fragmentTransaction = fragmentManager.beginTransaction()
-                val fragment = myTrainingClassFragment()
+                var fragment = myBookingFragment()
                 fragmentTransaction.remove(eventFragment())
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
+
+
+            R.id.nav_courtBooking ->
+            {
+
+                var fragment = courtBookingFragment()
+                fragmentTransaction.remove(eventFragment())
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction.commit()
+
+            }
+
+
+            R.id.nav_myTrainingClass ->
+            {
+
+                var fragment = myTrainingClassFragment()
+                fragmentTransaction.remove(eventFragment())
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
                 fragmentTransaction.commit()
 
                 //Toast.makeText(this, "asdsad", Toast.LENGTH_SHORT).show()
@@ -174,24 +201,20 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
             R.id.nav_coachManagement ->
             {
-                val fragmentManager = supportFragmentManager
-                val fragmentTransaction = fragmentManager.beginTransaction()
-                val fragment = coachManagementFragment()
+
+                var fragment = coachManagementFragment()
                 fragmentTransaction.remove(eventFragment())
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-                fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
                 drawerLayout.closeDrawers()
             }
 
             R.id.nav_trainingClass ->
             {
-                val fragmentManager = supportFragmentManager
-                val fragmentTransaction = fragmentManager.beginTransaction()
-                val fragment = trainingClassFragment()
+
+                var fragment = trainingClassFragment()
                 fragmentTransaction.remove(eventFragment())
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-                fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
                 drawerLayout.closeDrawers()
             }
@@ -200,11 +223,9 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_event ->
             {
 
-                val fragmentManager = supportFragmentManager
-                val fragmentTransaction = fragmentManager.beginTransaction()
-                val fragment = eventFragment()
+
+                var fragment = eventFragment()
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-                fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
                 drawerLayout.closeDrawers()
             }
@@ -229,6 +250,9 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
 
         }
+
+
+        drawerLayout.closeDrawers()
 
         return true
 

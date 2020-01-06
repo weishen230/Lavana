@@ -14,6 +14,8 @@
     <string name="menu_coachMgmt">Coach Management</string>
     <string name="menu_trainingClass">Register Training Class</string>
     <string name="menu_myTrainingClass">My Training Class</string>
+    <string name="menu_courtBooking">Book A Court</string>
+    <string name="menu_myBooking">My Booking</string>
     <string name="menu_share">Share</string>
     <string name="menu_logout">Logout</string>
 
@@ -190,7 +192,6 @@
         these including a 199-week streak from 21 August 2008 to 14 June 2012. </string>
 
 
-
     //sinpei
     <string name="nameoncard">Name On Card</string>
     <string name="cardnum">Card Number</string>
@@ -232,5 +233,65 @@
 
     </string-array>
     <string name="title_activity_pac_number">PacNumber</string>
+
+
+    //sinwei
+
+    <string name="courtBooking">Court Booking</string>
+    <string name="bookingDetailHeader">Booking Details</string>
+    <string name="instruction">Please select a date and a time</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="clear">Clear</string>
+    <string name="confirm">Confirm</string>
+    <string name="category">Category</string>
+    <string name="quantity">Quantity (Maximum 3 per booking)</string>
+    <string name="bookingDetail">Please choose only ONE court</string>
+    <string name="courtA">Court A\n
+    Available\n
+        Outdoor\n
+        RM3.00 per hour
+    </string>
+
+    <string-array name="categoryArray">
+        <item>Badminton</item>
+        <item>Football</item>
+        <item>Basketball</item>
+        <item>Volleyball</item>
+    </string-array>
+
+    <string-array name="timeArray">
+        <item>11.00am - 1.00pm</item>
+        <item>1.00pm - 3.00pm</item>
+        <item>3.00pm - 5.00pm</item>
+        <item>5.00pm - 7.00pm</item>
+    </string-array>
+
+
+    <string name="courtB">Court B\n
+    Not Available\n
+        Indoor\n
+        RM3.00 per hour
+    </string>
+
+    <string name="courtC">Court C\n
+    Available\n
+        Indoor\n
+        RM3.00 per hour
+    </string>
+
+
+    <string name="usernameSummary">Username:</string>
+    <string name="id">Booking ID:</string>
+    <string name="dateSummary">Date:</string>
+    <string name="bookedDate">Booked Date:</string>
+    <string name="bookedTime">Booked Time:</string>
+
+    <string name="court">Court:</string>
+    <string name="type">Type: Indoor</string>
+    <string name="charge">Total : </string>
+    <string name="btnBack">Back</string>
+    <string name="btnPayment">Proceed To Payment</string>
+
 
 </resources>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/bookingSummary1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/bookingDetailHeader"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <TextView
+        android:id="@+id/bookDetailID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:textSize="17dp"
+        android:text="@string/id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookingSummary1" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:text="@string/date"
+        android:textSize="17dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/bookDetailID"
+        app:layout_constraintTop_toTopOf="@+id/bookDetailID" />
+
+    <TextView
+        android:id="@+id/bookDetailName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/usernameSummary"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="@+id/bookDetailID"
+        app:layout_constraintTop_toBottomOf="@+id/bookDetailID" />
+
+    <TextView
+        android:id="@+id/BookedDetailDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/bookedDate"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="@+id/bookDetailName"
+        app:layout_constraintTop_toBottomOf="@+id/bookDetailName" />
+
+    <TextView
+        android:id="@+id/BookedDetailTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="@string/bookedTime"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="@+id/BookedDetailDate"
+        app:layout_constraintTop_toBottomOf="@+id/BookedDetailDate" />
+
+    <TextView
+        android:id="@+id/BookedDetailCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textSize="17dp"
+        android:text="@string/category"
+        app:layout_constraintStart_toStartOf="@+id/BookedDetailTime"
+        app:layout_constraintTop_toBottomOf="@+id/BookedDetailTime" />
+
+    <TextView
+        android:id="@+id/BookedDetailCourt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="17dp"
+        android:text="@string/court"
+        app:layout_constraintStart_toStartOf="@+id/BookedDetailCategory"
+        app:layout_constraintTop_toBottomOf="@+id/BookedDetailCategory" />
+
+    <TextView
+        android:id="@+id/BookedDetailType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/type"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="@+id/BookedDetailCourt"
+        app:layout_constraintTop_toBottomOf="@+id/BookedDetailCourt" />
+
+    <TextView
+        android:id="@+id/BookedDetailCharge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/charge"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/BookedDetailType"
+        app:layout_constraintTop_toBottomOf="@+id/BookedDetailType" />
+
+    <Button
+        android:visibility="invisible"
+        android:id="@+id/buttonBack1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/btnBack"
+        app:layout_constraintStart_toStartOf="@+id/BookedDetailCharge"
+        app:layout_constraintTop_toBottomOf="@+id/BookedDetailCharge" />
+
+    <Button
+        android:visibility="invisible"
+        android:id="@+id/buttonPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
+        android:padding="15dp"
+        android:text="@string/btnPayment"
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toEndOf="@+id/buttonBack"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCharge" />
+    <!--
+        <androidx.cardview.widget.CardView
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/courtSummary"
+            app:layout_constraintVertical_bias="0.0">
+
+        </androidx.cardview.widget.CardView> -->
+</androidx.constraintlayout.widget.ConstraintLayout>

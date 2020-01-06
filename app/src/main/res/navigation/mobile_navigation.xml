@@ -32,10 +32,10 @@
 
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.lavana.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_courtBooking"
+        android:name="com.example.lavana.ui.courtBooking.courtBookingFragment"
         android:label="hey"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_court_booking" />
 
     <fragment
         android:id="@+id/nav_myTrainingClass"
@@ -45,9 +45,9 @@
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.example.lavana.ui.share.ShareFragment"
+        android:name="com.example.lavana.ui.myBooking.myBookingFragment"
         android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
+        tools:layout="@layout/fragment_myBooking" />
 
     <fragment
         android:id="@+id/nav_trainingClass"

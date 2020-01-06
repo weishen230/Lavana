@@ -8,4 +8,10 @@
     <dimen name="title_size">30sp</dimen>
     <dimen name="coach_title">16sp</dimen>
     <dimen name="normalText">16sp</dimen>
+
+
+    <dimen name="textSize">30sp</dimen>
+    <dimen name="contentSize">20sp</dimen>
+    <dimen name="spinnerHeight">45dp</dimen>
+    <dimen name="courtSize">15dp</dimen>
 </resources>

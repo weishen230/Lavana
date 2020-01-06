@@ -37,7 +37,7 @@ class pacNumberActivity : AppCompatActivity() {
 
         var sharedPreferences = getSharedPreferences("com.example.lavana", Context.MODE_PRIVATE)
         saveEmail = (sharedPreferences.getString("SESSION_EMAIL", getString(R.string.sharedPreEmail))).toString()
-
+        var saveCode = sharedPreferences.getString("NUMBER", "No Number")
 
 
         resendBtn.setOnClickListener{
@@ -55,23 +55,53 @@ class pacNumberActivity : AppCompatActivity() {
 
             if(tempCode.equals(pacnumberEdit.text.toString()))
             {
-                var saveTimeSelected = sharedPreferences.getString("SELECTED_TIME", "No Time")
-                var saveDaySelected = sharedPreferences.getString("SELECTED_DAY", "No Day")
-                var saveSports = sharedPreferences.getString("SELECTED_SPORT", "No Sport")
-                var saveCoachName = sharedPreferences.getString("UNDERCOACH_NAME", "No Name")
-                var saveUsername = sharedPreferences.getString("SESSION_ID", getString(R.string.sharedPreUsername))
+                if((saveCode.toString()).equals("1"))
+                {
+                    var saveUsername = sharedPreferences.getString("SESSION_ID", getString(R.string.sharedPreUsername))
+                    var saveSports= sharedPreferences.getString("TOBOOK_SPORT", "No Sport")
+                    var saveDate= sharedPreferences.getString("TOBOOK_DAY", "No Day")
+                    var saveTime= sharedPreferences.getString("TOBOOK_TIME", "No Time")
+                    var saveCourt = sharedPreferences.getString("TOBOOK_COURT", "No Court")
+                    var saveType = sharedPreferences.getString("TOBOOK_TYPE", "No Type")
+                    var saveTotal = sharedPreferences.getString("TOBOOK_TOTAL", "No Total")
 
-                val firebase = FirebaseDatabase.getInstance().getReference("Training Class")
-                val classKey = firebase.push().key.toString()
+                    var random : Int = (Random.nextInt(999999) + 100000)
+                    var bookingID = "B" + random
 
-                val newTrainingClass = MyClass(saveUsername!!, saveSports!!, saveDaySelected!!, saveTimeSelected!!, saveCoachName!!, saveDaySelected!! + " " + saveTimeSelected!! + " " + saveSports!!)
+                    val firebase = FirebaseDatabase.getInstance().getReference("myBookingFragment")
+                    val bookingKey = firebase.push().key.toString()
 
-                firebase.child(classKey).setValue(newTrainingClass).addOnCompleteListener{
+                    val myBooking = Booking(bookingID, saveUsername!!, saveDate!!, saveTime!!, saveSports!!, saveCourt!!, saveType!!, saveTotal!!)
 
-                    val intent = Intent(this, paymentSuccessful::class.java)
-                    startActivity(intent)
+                    firebase.child(bookingKey).setValue(myBooking).addOnCompleteListener{
+
+                        val intent = Intent(this, paymentSuccessful::class.java)
+                        startActivity(intent)
+
+                    }
 
                 }
+                else
+                {
+                    var saveTimeSelected = sharedPreferences.getString("SELECTED_TIME", "No Time")
+                    var saveDaySelected = sharedPreferences.getString("SELECTED_DAY", "No Day")
+                    var saveSports = sharedPreferences.getString("SELECTED_SPORT", "No Sport")
+                    var saveCoachName = sharedPreferences.getString("UNDERCOACH_NAME", "No Name")
+                    var saveUsername = sharedPreferences.getString("SESSION_ID", getString(R.string.sharedPreUsername))
+
+                    val firebase = FirebaseDatabase.getInstance().getReference("Training Class")
+                    val classKey = firebase.push().key.toString()
+
+                    val newTrainingClass = MyClass(saveUsername!!, saveSports!!, saveDaySelected!!, saveTimeSelected!!, saveCoachName!!, saveDaySelected!! + " " + saveTimeSelected!! + " " + saveSports!!)
+
+                    firebase.child(classKey).setValue(newTrainingClass).addOnCompleteListener{
+
+                        val intent = Intent(this, paymentSuccessful::class.java)
+                        startActivity(intent)
+
+                    }
+                }
+
 
             }
             else

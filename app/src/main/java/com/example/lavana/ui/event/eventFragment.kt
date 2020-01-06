@@ -31,6 +31,8 @@ class eventFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        container?.removeAllViews();
+
         (activity as AppCompatActivity).supportActionBar?.title = "Home"
 
         val binding = DataBindingUtil.inflate<LoopEventBinding>(inflater, R.layout.loop_event, container, false)

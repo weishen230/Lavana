@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".paymentActivity"></activity>
+        <activity android:name=".myBookDetailActivity"></activity>
+        <activity android:name=".bookingSummaryActivity" />
+        <activity android:name=".selectMyCourtActivity" />
+        <activity android:name=".createCourt" />
+        <activity android:name=".paymentActivity" />
         <activity android:name=".pacNumberActivity" />
         <activity android:name=".paymentSuccessful" />
         <activity

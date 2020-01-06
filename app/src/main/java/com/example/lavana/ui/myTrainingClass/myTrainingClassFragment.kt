@@ -31,6 +31,8 @@ class myTrainingClassFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        container?.removeAllViews();
+
         var sharedPreferences = this.activity?.getSharedPreferences("com.example.lavana", Context.MODE_PRIVATE)
         val username = sharedPreferences?.getString("SESSION_ID", getString(R.string.sharedPreUsername))
         Log.i("us", username.toString())

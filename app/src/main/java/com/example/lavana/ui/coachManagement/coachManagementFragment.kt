@@ -36,6 +36,8 @@ class coachManagementFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        container?.removeAllViews();
+
         val root = inflater.inflate(R.layout.fragment_coach_management, container, false)
 
 

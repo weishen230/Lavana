@@ -19,6 +19,8 @@ class eventDetailSecFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        container?.removeAllViews();
         // Inflate the layout for this fragment
 
         (activity as AppCompatActivity).supportActionBar?.title = "Christmas Run"

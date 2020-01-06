@@ -22,6 +22,16 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_myTrainingClass" />
 
+        <item
+            android:id="@+id/nav_courtBooking"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_courtBooking" />
+
+        <item
+            android:id="@+id/nav_myBooking"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_myBooking" />
+
 
 
     </group>

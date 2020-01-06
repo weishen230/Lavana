@@ -74,6 +74,9 @@ class trainingClassRegisterActivity : AppCompatActivity() {
         var saveMemberAge = sharedPreferences.getString("MEMREG_AGE", "No Age")?:return
         var saveMemberPhone = sharedPreferences.getString("MEMREG_PHONE", "No Phone")?:return
 
+        var saveCode = sharedPreferences.getString("NUMBER", "No Number")?:return
+        var number = "0"
+
         coachNameTxt.setText("Name: " + saveName)
         coachGenderTxt.setText("Gender: " + saveGender)
         coachPhoneTxt.setText("Phone No: " + savePhone)
@@ -111,6 +114,7 @@ class trainingClassRegisterActivity : AppCompatActivity() {
                     putString("MEMREG_GENDER", spinnerGender.selectedItem.toString())
                     putString("MEMREG_AGE", ageEditText.text.toString())
                     putString("MEMREG_PHONE", phoneNoEditText.text.toString())
+                    putString("NUMBER", number)
                     apply()
                 }
 
