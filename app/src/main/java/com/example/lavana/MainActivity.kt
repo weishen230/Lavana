@@ -203,7 +203,7 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, registerActivity::class.java)
             startActivity(intent)
-            finish()
+            //finish()
         }
 
 
