@@ -11,14 +11,13 @@
         android:roundIcon="@mipmap/lavana_logo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".coachTotalStudent"></activity>
         <activity android:name=".backgroundSplashActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".myBookDetailActivity" />
         <activity android:name=".bookingSummaryActivity" />
@@ -64,9 +63,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
