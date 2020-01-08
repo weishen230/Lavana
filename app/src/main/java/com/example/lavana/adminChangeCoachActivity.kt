@@ -202,7 +202,16 @@ class adminChangeCoachActivity : AppCompatActivity() {
 
         }
 
-        mAlertDialog.show()
+
+        try {
+            mAlertDialog.show()
+        }
+        catch (e : Exception)
+        {
+
+        }
+
+
     }
 
 

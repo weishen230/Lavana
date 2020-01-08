@@ -31,6 +31,7 @@ class pacNumberActivity : AppCompatActivity() {
         setContentView(R.layout.activity_pac_number)
 
         setTitle("Payment Confirmation")
+        appExecutors = AppExecutors()
 
         proceedBtn = findViewById(R.id.paymentProceedBtn)
         resendBtn = findViewById(R.id.pacNumberResendBtn)
@@ -68,7 +69,7 @@ class pacNumberActivity : AppCompatActivity() {
                     var random : Int = (Random.nextInt(999999) + 100000)
                     var bookingID = "B" + random
 
-                    val firebase = FirebaseDatabase.getInstance().getReference("myBookingFragment")
+                    val firebase = FirebaseDatabase.getInstance().getReference("myBooking")
                     val bookingKey = firebase.push().key.toString()
 
                     val myBooking = Booking(bookingID, saveUsername!!, saveDate!!, saveTime!!, saveSports!!, saveCourt!!, saveType!!, saveTotal!!)

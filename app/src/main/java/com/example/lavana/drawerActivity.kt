@@ -2,6 +2,7 @@ package com.example.lavana
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -30,6 +31,10 @@ import com.example.lavana.ui.trainingClass.trainingClassFragment
 
 import android.view.ViewGroup
 import com.example.lavana.ui.myBooking.myBookingFragment
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.os.PersistableBundle
 
 
 class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -42,8 +47,10 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     private lateinit var loginedEmail : TextView
     private lateinit var getUserName : String
     private lateinit var profilePic : ImageView
+    private lateinit var fragment : Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drawer)
 
@@ -82,6 +89,7 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             val sessionId = sharedPreferences.getString("SESSION_ID", getString(R.string.sharedPreUsername))
             val sessionEmail  = sharedPreferences.getString("SESSION_EMAIL", getString(R.string.sharedPreEmail))
             val sessProPic = sharedPreferences.getString("SESSION_PROPIC", "No Pic")
+            val sessAccType = sharedPreferences.getString("SESSION_ACCTYPE", "No Type")
             loginedName.setText(sessionId.toString())
             loginedEmail.setText(sessionEmail.toString())
 
@@ -122,8 +130,31 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             //navigationView.setupWithNavController(navController)
 
             //use to check accType user later
-            //val nav_menu : Menu = navigationView.menu
-            //nav_menu.findItem(R.id.nav_event).setVisible(false)
+
+            if(sessAccType.equals("coach"))
+            {
+                val nav_menu : Menu = navigationView.menu
+                nav_menu.findItem(R.id.nav_myBooking).setVisible(false)
+                nav_menu.findItem(R.id.nav_courtBooking).setVisible(false)
+                nav_menu.findItem(R.id.nav_myTrainingClass).setVisible(false)
+                nav_menu.findItem(R.id.nav_trainingClass).setVisible(false)
+                nav_menu.findItem(R.id.nav_coachManagement).setVisible(false)
+            }
+            else if(sessAccType.equals("member"))
+            {
+                val nav_menu : Menu = navigationView.menu
+                nav_menu.findItem(R.id.nav_coachManagement).setVisible(false)
+            }
+            else if(sessAccType.equals("admin"))
+            {
+                val nav_menu : Menu = navigationView.menu
+                nav_menu.findItem(R.id.nav_myBooking).setVisible(false)
+                nav_menu.findItem(R.id.nav_courtBooking).setVisible(false)
+                nav_menu.findItem(R.id.nav_myTrainingClass).setVisible(false)
+                nav_menu.findItem(R.id.nav_trainingClass).setVisible(false)
+
+            }
+
 
         }
         else
@@ -167,9 +198,12 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         {
             R.id.nav_myBooking ->
             {
-                var fragment = myBookingFragment()
+                fragment  = myBookingFragment()
+
+
                 fragmentTransaction.remove(eventFragment())
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction.add(R.id.nav_host_fragment, fragment)
+                fragmentManager.saveFragmentInstanceState(fragment)
                 fragmentTransaction.commit()
             }
 
@@ -177,9 +211,10 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_courtBooking ->
             {
 
-                var fragment = courtBookingFragment()
+                fragment = courtBookingFragment()
                 fragmentTransaction.remove(eventFragment())
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction.add(R.id.nav_host_fragment, fragment)
+
                 fragmentTransaction.commit()
 
             }
@@ -188,9 +223,9 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_myTrainingClass ->
             {
 
-                var fragment = myTrainingClassFragment()
+                fragment = myTrainingClassFragment()
                 fragmentTransaction.remove(eventFragment())
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction.add(R.id.nav_host_fragment, fragment)
                 fragmentTransaction.commit()
 
                 //Toast.makeText(this, "asdsad", Toast.LENGTH_SHORT).show()
@@ -202,9 +237,9 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_coachManagement ->
             {
 
-                var fragment = coachManagementFragment()
+                fragment = coachManagementFragment()
                 fragmentTransaction.remove(eventFragment())
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction.add(R.id.nav_host_fragment, fragment)
                 fragmentTransaction.commit()
                 drawerLayout.closeDrawers()
             }
@@ -212,9 +247,9 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_trainingClass ->
             {
 
-                var fragment = trainingClassFragment()
+                fragment = trainingClassFragment()
                 fragmentTransaction.remove(eventFragment())
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction.add(R.id.nav_host_fragment, fragment)
                 fragmentTransaction.commit()
                 drawerLayout.closeDrawers()
             }
@@ -224,8 +259,8 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             {
 
 
-                var fragment = eventFragment()
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragment = eventFragment()
+                fragmentTransaction.add(R.id.nav_host_fragment, fragment)
                 fragmentTransaction.commit()
                 drawerLayout.closeDrawers()
             }
@@ -258,6 +293,11 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
     }
 
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        getSupportFragmentManager().putFragment(outState, "myFragmentName", fragment);
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId)
@@ -274,6 +314,12 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+    }
 
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+    }
 
 }

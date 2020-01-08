@@ -17,8 +17,8 @@ import com.example.lavana.R
 import com.example.lavana.ui.myTrainingClass.myTrainingClassFragment
 import com.google.firebase.database.*
 import com.google.gson.Gson
-
-
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class myBookingFragment : Fragment(), myBookingAdapter.OnItemClickListener{
@@ -60,19 +60,58 @@ class myBookingFragment : Fragment(), myBookingAdapter.OnItemClickListener{
         readData(object : myBookingFragment.FirebaseCallBack {
             override fun onCallBack(user1 : MutableList<Booking>) {
                 allBooking = user1
+                var calendar : Calendar = Calendar.getInstance()
+                var simpleDateFormat : SimpleDateFormat = SimpleDateFormat("dd MMM yyyy")
+                var date = simpleDateFormat.format(calendar.time)
                 /* val uu : MutableList<User>
                  uu = mutableListOf()*/
+
+
+                val theDateMonth = date.toString()
+                val month = theDateMonth.substring(2,5).toString()
+                var monthInt =  convertToMonthInt(month)
 
 
                 for( u in allBooking)
                 {
 
+
+
                     if(u.bookUsername.equals(username))
                     {
-                        Log.i("takkanwey", u.bookID.toString())
-                        val myBookingma = Booking(u.bookID, u.bookUsername, u.bookedDate, u.bookedTime, u.sportCtg, u.courtBooked, u.typeInOut, u.total)
-                        onlyMyBooking.add(myBookingma)
-                        //complete = 1
+                        var bookedMonthString = (u.bookedDate.substring(2,6).toString())
+                        Log.i("month", bookedMonthString)
+                        var bookedMonthInt = convertToMonthInt(bookedMonthString)
+
+                        if(monthInt > bookedMonthInt)
+                        {
+                            Log.i("takkanwey", u.bookID.toString())
+                            val myBookingma = Booking(u.bookID, u.bookUsername, u.bookedDate, u.bookedTime, u.sportCtg, u.courtBooked, u.typeInOut, u.total)
+                            onlyMyBooking.add(myBookingma)
+                            //complete = 1
+                        }
+                        else if(monthInt == bookedMonthInt)
+                        {
+                            var currentDay = theDateMonth.substring(0,2).toString().toInt()
+                            var bookedDay = (u.bookedDate).substring(0,2).toString().toInt()
+                                Log.i("day", currentDay.toString())
+                                Log.i("day1", bookedDay.toString())
+
+
+                            if(currentDay <= bookedDay)
+                            {
+                                Log.i("takkanwey", u.bookID.toString())
+                                val myBookingma = Booking(u.bookID, u.bookUsername, u.bookedDate, u.bookedTime, u.sportCtg, u.courtBooked, u.typeInOut, u.total)
+                                onlyMyBooking.add(myBookingma)
+                                //complete = 1
+                            }
+                            else
+                            {
+
+                            }
+                        }
+
+
 
 
                     }
@@ -90,6 +129,34 @@ class myBookingFragment : Fragment(), myBookingAdapter.OnItemClickListener{
 
 
         return root
+    }
+
+    fun checkDay(day : Int)
+    {
+
+    }
+
+    fun convertToMonthInt(month : String) : Int
+    {
+        var monthInt = 0
+
+        when(month)
+        {
+            "Jan" -> monthInt = 1
+            "Feb" -> monthInt = 2
+            "Mar" -> monthInt = 3
+            "Apr" -> monthInt = 4
+            "May" -> monthInt = 5
+            "Jun" -> monthInt = 6
+            "Jul" -> monthInt = 7
+            "Aug" -> monthInt = 8
+            "Sep" -> monthInt = 9
+            "Oct" -> monthInt = 10
+            "Nov" -> monthInt = 11
+            "Dec" -> monthInt = 12
+        }
+
+        return monthInt
     }
 
 

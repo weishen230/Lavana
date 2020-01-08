@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lavana.R
 import com.example.lavana.adminSelectTimeActivity
 import com.google.firebase.database.DatabaseReference
+import kotlinx.android.synthetic.*
 
 class coachManagementFragment : Fragment() {
 

@@ -52,9 +52,13 @@
         <activity android:name=".registerActivity" />
         <activity
             android:name=".drawerActivity"
+            android:configChanges="keyboardHidden|orientation"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

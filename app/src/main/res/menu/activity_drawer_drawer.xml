@@ -11,25 +11,25 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_coachManagement"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@android:drawable/ic_menu_edit"
             android:title="@string/menu_coachMgmt" />
         <item
             android:id="@+id/nav_trainingClass"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/ic_input_add"
             android:title="@string/menu_trainingClass" />
         <item
             android:id="@+id/nav_myTrainingClass"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@android:drawable/ic_input_get"
             android:title="@string/menu_myTrainingClass" />
 
         <item
             android:id="@+id/nav_courtBooking"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@android:drawable/ic_menu_myplaces"
             android:title="@string/menu_courtBooking" />
 
         <item
             android:id="@+id/nav_myBooking"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@android:drawable/ic_menu_today"
             android:title="@string/menu_myBooking" />
 
 

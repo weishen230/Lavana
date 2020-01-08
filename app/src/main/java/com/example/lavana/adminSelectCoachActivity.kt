@@ -50,10 +50,7 @@ class adminSelectCoachActivity : AppCompatActivity(), CustomAdapter.OnItemClickL
 
         Log.i("hiwhy", "after")
 
-        val adapter = CustomAdapter(user, this)
-        Log.i("hiwhy", "after1")
 
-        recyclerView.adapter = adapter
 
 
 
@@ -121,6 +118,7 @@ class adminSelectCoachActivity : AppCompatActivity(), CustomAdapter.OnItemClickL
                     Log.i("hi", u.name)
                 }
 
+                execute()
 
             }
 
@@ -133,6 +131,12 @@ class adminSelectCoachActivity : AppCompatActivity(), CustomAdapter.OnItemClickL
     }
 
 
+    fun execute()
+    {
+        val adapter = CustomAdapter(user, this)
+        Log.i("hiwhy", "after1")
+        recyclerView.adapter = adapter
+    }
 
     override fun onItemClick(position: Int) {
 
